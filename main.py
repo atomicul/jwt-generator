@@ -62,7 +62,7 @@ def get_key() -> rsa.RSAPrivateKey:
                 raise ValueError
             return key
 
-    key = rsa.generate_private_key(65537, 2048, default_backend)
+    key = rsa.generate_private_key(65537, 2048, default_backend())
     with open(KEYNAME, "wb") as file:
         file.write(
             key.private_bytes(
